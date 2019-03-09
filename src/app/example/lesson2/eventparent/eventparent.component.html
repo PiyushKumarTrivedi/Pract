@@ -1,2 +1,2 @@
 <p>Its a parent </p>
-<app-eventchild [Inputevent]="Parentevent"></app-eventchild>
+<app-eventchild  *ngFor="let event of Parentevent " [inputchild1]="event" ></app-eventchild>

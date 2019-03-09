@@ -1,0 +1,24 @@
+<div class="container">
+  <img [src]="inputchild?.imageUrl" [alt]="inputchild?.name">
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2>{{inputchild?.name}} </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 ">
+      <div><strong>Date:</strong> {{inputchild.Date}}</div>
+      <div><strong>Time:</strong> {{inputchild?.time}}</div>
+      <div><strong>Price:</strong> ${{inputchild?.price}}</div>
+    </div>
+    <div class="col-md-6">
+      <address>
+        <strong>Address:</strong><br />
+        {{inputchild.location?.address}}<br />
+        {{inputchild.location?.city}}, {{inputchild?.location?.country}}
+      </address>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,9 @@ import { EventParentComponent } from './example/lesson1/event-parent/event-paren
 import { EventserviceService } from './example/lesson2/event.service';
 import { EventchildComponent } from './example/lesson2/eventchild/eventchild.component';
 import { EventparentComponent } from './example/lesson2/eventparent/eventparent.component';
+import { EventDetailsComponent } from './lesson2/event-details/event-details.component';
+import { EventdetailsComponent } from './example/lesson2/eventdetails/eventdetails.component';
+import { ErrorComponent } from './example/error/error.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { EventparentComponent } from './example/lesson2/eventparent/eventparent.
     EventChildComponent,
     EventParentComponent,
     EventchildComponent,
-    EventparentComponent
+    EventparentComponent,
+    EventDetailsComponent,
+    EventdetailsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

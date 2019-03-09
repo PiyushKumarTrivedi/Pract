@@ -10,15 +10,15 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class EventchildComponent implements OnInit {
  
-  @Input() Inputevent: any;
-  event: any;
+  @Input() inputchild: any;
+  @Input() inputchild1: any;
 
   constructor(private service:EventserviceService, private route:ActivatedRoute) {
     
    }
 
   ngOnInit() {
-  this.event = this.service.geteventByid(+this.route.snapshot.params["id"]);
+    //this.inputchild = this.service.geteventByid(+this.route.snapshot.params["id"]);
   }
 
 }
