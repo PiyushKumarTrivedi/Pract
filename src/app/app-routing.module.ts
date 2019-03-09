@@ -7,6 +7,7 @@ import { EventparentComponent } from './example/lesson2/eventparent/eventparent.
 import { EventdetailsComponent } from './example/lesson2/eventdetails/eventdetails.component';
 import { ErrorComponent } from './example/error/error.component';
 import { EventRouteActivatorService } from './example/event-route-activator.service';
+import { CreateEventComponent } from './example/lesson2/create-event/create-event.component';
  
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'Lesson2', component: EventparentComponent },
   { path: 'event/:id', component: EventchildComponent },
   { path: 'detailsPage/:id', component: EventdetailsComponent,canActivate:[EventRouteActivatorService] },
-  { path: '404', component: ErrorComponent }
+  { path: '404', component: ErrorComponent },
+  { path: 'Create', component: CreateEventComponent,canDeactivate:['CreateDeactivateMethod'] }
 ];
 
 @NgModule({
