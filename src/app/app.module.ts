@@ -16,6 +16,7 @@ import { EventDetailsComponent } from './lesson2/event-details/event-details.com
 import { EventdetailsComponent } from './example/lesson2/eventdetails/eventdetails.component';
 import { ErrorComponent } from './example/error/error.component';
 import { CreateEventComponent } from './example/lesson2/create-event/create-event.component';
+import { ResolverService } from './example/lesson2/resolver.service';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,9 @@ import { CreateEventComponent } from './example/lesson2/create-event/create-even
     EventserviceService,
     {
      provide: 'CreateDeactivateMethod', useValue: checkDirtyState
-    }
+    },
 
-
+    ResolverService
   ],
   bootstrap: [AppComponent]
 })

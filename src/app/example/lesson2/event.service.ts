@@ -13,7 +13,7 @@ export class EventserviceService {
 
       setTimeout(() => {
         subject.next(events); subject.complete();
-      }, 5000);
+      }, 1000);
       return subject;
     }
 

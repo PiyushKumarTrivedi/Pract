@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventserviceService } from '../event.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-eventparent',
@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
 export class EventparentComponent implements OnInit {
   Parentevent: any;
 
-  constructor(private service: EventserviceService, private route: Router) { }
+  constructor(private service: EventserviceService, private route: Router,private activateroute: ActivatedRoute) { }
 
   ngOnInit() {
-     this.service.getevent().subscribe(e => {this.Parentevent = e;});
+    //  this.service.getevent().subscribe(e => {this.Parentevent = e;});
+    this.Parentevent = this.activateroute.snapshot.data['resolveparent'];
   }
   CreateNewEvent(): void {
     this.route.navigate(['/Create']);

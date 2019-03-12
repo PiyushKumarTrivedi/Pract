@@ -8,12 +8,13 @@ import { EventdetailsComponent } from './example/lesson2/eventdetails/eventdetai
 import { ErrorComponent } from './example/error/error.component';
 import { EventRouteActivatorService } from './example/event-route-activator.service';
 import { CreateEventComponent } from './example/lesson2/create-event/create-event.component';
+import { ResolverService } from './example/lesson2/resolver.service';
  
 
 const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'Lesson', component: Lesson1Component },
-  { path: 'Lesson2', component: EventparentComponent },
+  { path: 'Lesson2', component: EventparentComponent,resolve: {resolveparent:ResolverService} },
   { path: 'event/:id', component: EventchildComponent },
   { path: 'detailsPage/:id', component: EventdetailsComponent,canActivate:[EventRouteActivatorService] },
   { path: '404', component: ErrorComponent },
