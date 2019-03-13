@@ -9,14 +9,20 @@ import { HomeComponent } from './home/home.component';
 import { EventChildComponent } from './example/lesson1/event-child/event-child.component';
 import { EventParentComponent } from './example/lesson1/event-parent/event-parent.component';
 
-import { EventserviceService } from './example/lesson2/event.service';
-import { EventchildComponent } from './example/lesson2/eventchild/eventchild.component';
-import { EventparentComponent } from './example/lesson2/eventparent/eventparent.component';
-import { EventDetailsComponent } from './lesson2/event-details/event-details.component';
-import { EventdetailsComponent } from './example/lesson2/eventdetails/eventdetails.component';
+import{
+  EventserviceService,
+  EventchildComponent,
+  EventparentComponent,
+  EventdetailsComponent,
+  CreateEventComponent,
+  ResolverService
+} from './example/lesson2/Indesx';
+
+ 
 import { ErrorComponent } from './example/error/error.component';
-import { CreateEventComponent } from './example/lesson2/create-event/create-event.component';
-import { ResolverService } from './example/lesson2/resolver.service';
+ 
+
+ 
 
 @NgModule({
   declarations: [
@@ -27,11 +33,11 @@ import { ResolverService } from './example/lesson2/resolver.service';
     EventChildComponent,
     EventParentComponent,
     EventchildComponent,
-    EventparentComponent,
-    EventDetailsComponent,
+    EventparentComponent,    
     EventdetailsComponent,
     ErrorComponent,
-    CreateEventComponent
+    CreateEventComponent,
+  
   ],
   imports: [
     BrowserModule,

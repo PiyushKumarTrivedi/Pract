@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'event/:id', component: EventchildComponent },
   { path: 'detailsPage/:id', component: EventdetailsComponent,canActivate:[EventRouteActivatorService] },
   { path: '404', component: ErrorComponent },
-  { path: 'Create', component: CreateEventComponent,canDeactivate:['CreateDeactivateMethod'] }
+  { path: 'Create', component: CreateEventComponent,canDeactivate:['CreateDeactivateMethod'] },
+  { path: 'create', loadChildren: './example/lesson2/user/user.module#UserModule' },
 ];
 
 @NgModule({
