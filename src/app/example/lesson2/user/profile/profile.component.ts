@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
+import {  AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  public username:string;
+  public password:string;
+  constructor(private auth:AuthService) { }
 
   ngOnInit() {
+    
   }
 
+  login(loginform:NgForm)
+  {
+    this.auth.loginUser(this.username,this.password);
+  }
+  
+  
 }
