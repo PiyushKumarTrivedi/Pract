@@ -37,7 +37,7 @@
      
     <div class="nav-item pull-right my-lg-0 ">
         <a *ngIf="!this.service.IsAuthenticated()" class="nav-link " [routerLink]="['/create/Profile']" routerLinkActive="router-link-active" >Login</a>
-      <a  *ngIf="this.service.IsAuthenticated()" class="nav-link " [routerLink]="['/create/Profile']" routerLinkActive="router-link-active" >{{this.service.userProfile.firstName}}</a>
+      <a  *ngIf="this.service.IsAuthenticated()" class="nav-link " [routerLink]="['/create/Profile']" routerLinkActive="router-link-active" >{{this.service.CurrentUser.firstName}}</a>
     </div>
     
   </div>

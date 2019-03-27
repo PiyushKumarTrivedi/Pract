@@ -5,22 +5,23 @@ import { Iuser } from "./login";
 })
 export class AuthService {
 
-  userProfile:Iuser ;
+  CurrentUser:Iuser ;
   constructor() { }
 
   loginUser(username:string,password:string)
   {
-    this.userProfile ={
+   
+    this.CurrentUser ={
       id:1,
       firstName:"Piyush",
       lastName:"Trivedi",
-      UserName:"Piyush1"
+      UserName:username
     }
   }
 
     IsAuthenticated()
     {
-      return !!this.userProfile;
+      return !!this.CurrentUser;
     }
 }
 
