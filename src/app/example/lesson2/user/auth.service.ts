@@ -23,5 +23,15 @@ export class AuthService {
     {
       return !!this.CurrentUser;
     }
+
+    updateUser(firstName:string,lastName:string)
+    {
+      this.CurrentUser={
+        id:1,
+        firstName:firstName,
+        lastName:lastName,
+        UserName:firstName
+      }
+    }
 }
 

@@ -1,2 +1,18 @@
-<h1>Login</h1>
-<div class=""></div>
+<div>
+    <h1> Edit your profile</h1>
+    <hr>
+    <div class="col-md-4">
+        <form  [formGroup]="profile2" (ngSubmit)="Submit(login.value)" novalidate>
+            <div class="form-group">
+                <label for="firstName">FirstName</label>
+               <input id="firstName" formControlName="firstName" [ngClass]="{error: isfirstnameValid()}" type="text" class="form-control" placeholder="FirstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">LastName</label>
+                <input id="lastName" formControlName="lastName" [ngClass]="{error: islastnameValid()}"  class="form-control" placeholder="LastName" type="text">
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fab fa-save fa-lg"></i>Save</button>
+            <button type="submit" class="btn btn-default">cancel</button>
+        </form>
+    </div>
+</div>
