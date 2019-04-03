@@ -9,6 +9,7 @@ import { ErrorComponent } from './example/error/error.component';
 import { EventRouteActivatorService } from './example/event-route-activator.service';
 import { CreateEventComponent } from './example/lesson2/create-event/create-event.component';
 import { ResolverService } from './example/lesson2/resolver.service';
+import { CreateSessionComponent } from './example/lesson2/Indesx';
  
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: '404', component: ErrorComponent },
   { path: 'Create', component: CreateEventComponent,canDeactivate:['CreateDeactivateMethod'] },
   { path: 'create', loadChildren: './example/lesson2/user/user.module#UserModule' },
+  {path:'Session',component:CreateSessionComponent}
 ];
 
 @NgModule({

@@ -8,7 +8,7 @@ import { Lesson1Component } from './example/lesson1/lesson1.component';
 import { HomeComponent } from './home/home.component';
 import { EventChildComponent } from './example/lesson1/event-child/event-child.component';
 import { EventParentComponent } from './example/lesson1/event-parent/event-parent.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import{
   EventserviceService,
@@ -16,12 +16,15 @@ import{
   EventparentComponent,
   EventdetailsComponent,
   CreateEventComponent,
-  ResolverService
+  ResolverService,
+  CreateSessionComponent,
 } from './example/lesson2/Indesx';
 
  
 import { ErrorComponent } from './example/error/error.component';
 import { AuthService } from './example/lesson2/user/auth.service';
+import { SessionDetailsComponent } from './example/lesson2/session-details/session-details.component';
+ 
  
 
  
@@ -39,13 +42,15 @@ import { AuthService } from './example/lesson2/user/auth.service';
     EventdetailsComponent,
     ErrorComponent,
     CreateEventComponent,
+    CreateSessionComponent,
+    SessionDetailsComponent,
     
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,ReactiveFormsModule
   ],
   providers: [
     EventserviceService,

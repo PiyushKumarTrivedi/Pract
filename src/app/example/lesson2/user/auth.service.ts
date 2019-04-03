@@ -5,18 +5,28 @@ import { Iuser } from "./login";
 })
 export class AuthService {
 
+   
+ 
   CurrentUser:Iuser ;
-  constructor() { }
+  constructor() {
+    this.CurrentUser ={
+      id:1,
+      firstName:"Piyush",
+      lastName:"Trivedi",
+      UserName:"test"
+    }
+
+  }
 
   loginUser(username:string,password:string)
   {
-   
     this.CurrentUser ={
       id:1,
       firstName:"Piyush",
       lastName:"Trivedi",
       UserName:username
     }
+    
   }
 
     IsAuthenticated()
@@ -33,5 +43,6 @@ export class AuthService {
         UserName:firstName
       }
     }
+    
 }
 
