@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators, FormGroup, AbstractControl } from '@angular/forms';
 import { Isession } from '../isession';
-import { Key } from 'protractor';
+ 
 
 @Component({
   selector: 'app-create-session',
@@ -9,6 +9,7 @@ import { Key } from 'protractor';
   styleUrls: ['./create-session.component.css']
 })
 export class CreateSessionComponent implements OnInit {
+  @Output() SaveSessionTonextParent = new EventEmitter();
  public name: FormControl;
  public presenter: FormControl;
  public duration: FormControl;
@@ -49,8 +50,9 @@ export class CreateSessionComponent implements OnInit {
         voters:[]
 
       }
-      console.log(session)
+      this.SaveSessionTonextParent.emit(session)
     }
+
 
 
     // RestrictedWords(control: AbstractControl): {[Key:string]:any} {

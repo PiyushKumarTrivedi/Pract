@@ -1,15 +1,15 @@
-<div class="container" [routerLink]="['/detailsPage',inputchild1.id]" routerLinkActive="router-link-active" >
-  <img [src]="inputchild1?.imageUrl" [alt]="inputchild1?.name">
+<div class="container-fluid bg-info" [routerLink]="['/detailsPage',inputchild1.id]" routerLinkActive="router-link-active" >
+  <img  width="100px" [src]="inputchild1?.imageUrl" >
 
   <div class="row">
-    <div class="col-md-11">
-      <h2>{{inputchild1?.name}} </h2>
+    <div class="col-md-8">
+      <h3>{{inputchild1.name}} </h3>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6 ">
-      <div><strong>Date:</strong> {{inputchild1.Date}}</div>
+      <div><strong>Date:</strong> {{inputchild1?.date}}</div>
       <div><strong>Time:</strong> {{inputchild1?.time}}</div>
       <div><strong>Price:</strong> ${{inputchild1?.price}}</div>
     </div>
@@ -21,4 +21,20 @@
       </address>
     </div>
   </div>
+</div>
+
+<hr>
+<div class="container-fluid">
+<div class="row pull-right">
+  <div class="col-2">
+    <h3>Session</h3>
+  </div>
+  <div class="col-2">
+      <input type="button" class="btn btn-primary pull-right" value="Add NewSession" (click)="addSession()">
+    </div>
+  
+</div>
+<app-session-details [childSessions]="inputchild1?.sessions" *ngIf="!addNewSession"  ></app-session-details>
+<app-create-session  *ngIf="addNewSession" (SaveSessionTonextParent) = "saveCrSessiontoChildSession($event)"></app-create-session>
+<hr>
 </div>

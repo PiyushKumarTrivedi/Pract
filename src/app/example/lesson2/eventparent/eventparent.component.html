@@ -1,4 +1,3 @@
-<p>Its a parent </p>
+<p>Its a parent &session </p>
 <button type="button" class="btn btn-primary" name="btn" (click)="CreateNewEvent()">Create New Event</button>
-<app-eventchild  *ngFor="let event of Parentevent " [inputchild1]="event" ></app-eventchild>
-<app-session-details **ngFor="let item of Parentevent."
+<app-eventchild  *ngFor="let event of Parentevent " [inputchild1]="event" (SaveNewSession)="SaveSession($event)" ></app-eventchild>

@@ -1,3 +1,11 @@
-<p>
-  session-details works!
-</p>
+<div class="row container border" *ngFor="let item of childSessions">
+  <div class="col-md-10">
+    <div class="well">
+        <h4>{{item?.name}}</h4>
+        <h6>{{item?.presenter}}</h6>
+        <span>Duration: {{item?.duration}}</span><br />
+        <span>Level: {{item?.level}}</span>
+        <p>{{item?.abstract}}</p>
+    </div>
+  </div>
+</div>
