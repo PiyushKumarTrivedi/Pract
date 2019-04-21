@@ -3,7 +3,7 @@ import { Isession } from '../lesson2/Indesx';
 export interface IEvent {
     id: number
     name: string
-    date: Date
+    date: string
     time: string
     price: number
     imageUrl: string
@@ -12,7 +12,7 @@ export interface IEvent {
       city: string
       country: string
     },
-    onlineUrl?: string,
+    // onlineUrl?: string,
     sessions: Isession[]
   }
   

@@ -1,11 +1,20 @@
-<div class="row container border" *ngFor="let item of childSessions">
-  <div class="col-md-10">
-    <div class="well">
-        <h4>{{item?.name}}</h4>
+<div class="container-fluid">
+
+
+<div class="row  border" *ngFor="let item of childSessions">
+  <div class="col-md-12">
+   <app-content-proj> 
+     <div well-title>     
+      <h4>{{item?.name}}</h4>
+     <i *ngIf="item.voters.length>3" class="fa fa-fire" style="color: red" aria-hidden="true"></i>
+    </div> 
+    <div well-body>
         <h6>{{item?.presenter}}</h6>
         <span>Duration: {{item?.duration}}</span><br />
         <span>Level: {{item?.level}}</span>
         <p>{{item?.abstract}}</p>
-    </div>
+    </div>   
+   </app-content-proj>
   </div>
+</div>
 </div>

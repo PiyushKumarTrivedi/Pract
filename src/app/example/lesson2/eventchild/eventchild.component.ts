@@ -17,9 +17,9 @@ export class EventchildComponent implements OnInit {
   @Output() SaveNewSession = new EventEmitter();
  
   // @Input() inputchild: any[];
-  @Input() inputchild1: IEvent[];
+  @Input() inputchild1: IEvent;
 
-  c:IEvent[]=this.inputchild1;
+  c =this.inputchild1;
 
    
   private addNewSession:boolean
@@ -29,21 +29,22 @@ export class EventchildComponent implements OnInit {
    }
    saveCrSessiontoChildSession(session:Isession)
    {
-     alert(this.c);
-    let eventID = Math.max.apply(null,this.c.sessions.map(s=>s.id));
-    eventID = eventID+1; 
+      
+    let SessionID = Math.max.apply(null,this.inputchild1.sessions.map(s=>s.id));
+    session.id = SessionID+1; 
+    this.inputchild1.sessions.push(session)
+    this.service.updateIndex(this.inputchild1)
+    this.addNewSession = false;
+     
    }
   ngOnInit() {
     
-    alert(this.c);
+    
     //this.inputchild = this.service.geteventByid(+this.route.snapshot.params["id"]);
   }
 
   addSession()
   {
-    
-    alert(this.c);
     this.addNewSession= !this.addNewSession;
-    
   }
 }

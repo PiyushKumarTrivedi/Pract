@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IEvent } from '../interface/ievent';
  
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +23,14 @@ export class EventserviceService {
     geteventByid(ID: number) {
         return events.find(e => e.id === ID);
       }
-      saveEvent(event)
+      saveEvent(event:IEvent)
       {
         event.id=999;
-        event.session=[];
+        event.sessions=[];
         events.push(event);
 
       }
-      updateIndex(event)
+      updateIndex(event:IEvent)
       {
        let ev=  events.findIndex(x=>x.id==event.id);
        events[ev]=event;
@@ -38,7 +39,7 @@ export class EventserviceService {
 
 }
 
-const events = [
+ const events :IEvent[] = [
   {
     id: 1,
     name: 'Angular Connect',

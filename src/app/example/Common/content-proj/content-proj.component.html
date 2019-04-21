@@ -1,0 +1,10 @@
+<div class="container-fluid" (click)="ContentToggle()">
+<div class="well thumbnail" >
+  <h4>
+  <ng-content select="[well-title]">   
+  </ng-content>
+</h4>
+  <hr *ngIf="Visible" class="hr">
+  <ng-content select="[well-body]" *ngIf="Visible"></ng-content>
+</div>  
+</div>

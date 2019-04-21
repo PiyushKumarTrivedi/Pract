@@ -24,6 +24,7 @@ import{
 import { ErrorComponent } from './example/error/error.component';
 import { AuthService } from './example/lesson2/user/auth.service';
 import { SessionDetailsComponent } from './example/lesson2/session-details/session-details.component';
+import { ContentProjComponent } from './example/Common/content-proj/content-proj.component';
  
  
 
@@ -44,6 +45,7 @@ import { SessionDetailsComponent } from './example/lesson2/session-details/sessi
     CreateEventComponent,
     CreateSessionComponent,
     SessionDetailsComponent,
+    ContentProjComponent,
     
   
   ],

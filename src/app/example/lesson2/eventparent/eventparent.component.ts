@@ -25,6 +25,8 @@ export class EventparentComponent implements OnInit {
  const nextId = Math.max.apply(null,this.Parentevent.sessions.map(x=>x.id))+1;
  session.id=nextId;
  this.Parentevent.sessions.push(session);
+ this.service.updateIndex(this.Parentevent);
+ console.log(this.Parentevent);
  
   }
 }
