@@ -25,9 +25,14 @@ import { ErrorComponent } from './example/error/error.component';
 import { AuthService } from './example/lesson2/user/auth.service';
 import { SessionDetailsComponent } from './example/lesson2/session-details/session-details.component';
 import { ContentProjComponent } from './example/Common/content-proj/content-proj.component';
+import { DurationPipeComponent } from './example/Common/CustomPipe/duration-pipe/duration-pipe.component';
+import { ToastrService } from './example/Common/toastr.service';
+import { JQ_Token } from './example/Common/Service/jq.service';
+import { SimpleModelComponent } from './example/lesson2/Model/simple-model/simple-model.component';
+import { ModelTrigegrDirective } from './example/Common/ExtendedHTML/model-trigegr.directive';
  
  
-
+let Jquery=window['$'];
  
 
 @NgModule({
@@ -46,6 +51,10 @@ import { ContentProjComponent } from './example/Common/content-proj/content-proj
     CreateSessionComponent,
     SessionDetailsComponent,
     ContentProjComponent,
+    DurationPipeComponent,
+    SimpleModelComponent,
+    ModelTrigegrDirective,
+    
     
   
   ],
@@ -60,9 +69,11 @@ import { ContentProjComponent } from './example/Common/content-proj/content-proj
     {
      provide: 'CreateDeactivateMethod', useValue: checkDirtyState
     },
-
+    {
+      provide:JQ_Token,useValue:Jquery
+    },
     ResolverService,
-    AuthService
+    AuthService,ToastrService
   ],
   bootstrap: [AppComponent]
 })

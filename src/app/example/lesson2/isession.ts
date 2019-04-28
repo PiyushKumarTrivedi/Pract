@@ -1,4 +1,5 @@
 export interface Isession {
+ 
    id:number,
    name :string,
    presenter:string,

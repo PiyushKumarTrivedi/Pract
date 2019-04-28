@@ -15,14 +15,14 @@ export class EventchildComponent implements OnInit {
   
   //@Output() sendSesionTOParent : new EventEmitter() 
   @Output() SaveNewSession = new EventEmitter();
- 
+ filterby :string ='all';
   // @Input() inputchild: any[];
   @Input() inputchild1: IEvent;
 
   c =this.inputchild1;
 
    
-  private addNewSession:boolean
+  public addNewSession:boolean
 
   constructor(private service:EventserviceService, private route:ActivatedRoute) {
     

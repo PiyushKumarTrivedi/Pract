@@ -6,17 +6,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent col-md-7">
+    <ul class="navbar-nav mr-auto ">
       <li class="nav-item active">
        
-        <a [routerLink]="['/Home']" routerLinkActive="router-link-active"   class="nav-link">Home</a>
+        <a [routerLink]="['/Home']" routerLinkActive="router-link-active"   class="nav-link btn-outline-danger">Home</a>
       </li>
       <li class="nav-item">
-        <a [routerLink]="['/Lesson']" routerLinkActive="router-link-active active"  class="nav-link">Lesson</a>
+        <a [routerLink]="['/Lesson']" routerLinkActive="router-link-active active"  class="nav-link ">Lesson</a>
       </li>
       <li class="nav-item">
-        <a [routerLink]="['/Lesson2']" routerLinkActive="router-link-active active"  class="nav-link">Lesson2</a>
+        <a [routerLink]="['/Lesson2']" routerLinkActive="router-link-active active"  class="nav-link ">Lesson2</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,11 +34,27 @@
       </li>
       
     </ul>
-     
-    <div class="nav-item pull-right my-lg-0 ">
+       
+  </div>
+    <form class="navbar-form form-inline pull-left col-4" id="searchform" (ngSubmit)="SearchSession(SearchTerm)">
+        <div class="form-group">
+            <input type="text" [(ngModel)]="SearchTerm" name="SearchTerm" class="form-control mr-2" placeholder="serach..">
+            <button class="btn btn-outline-danger" appModelTrigegr >Serach</button>
+            </div>            
+    </form>
+           
+  
+           
+    <div class="nav-item  col-md-1">
         <a *ngIf="!this.service.IsAuthenticated()" class="nav-link " [routerLink]="['/create/Login']" routerLinkActive="router-link-active" >Login</a>
       <a  *ngIf="this.service.IsAuthenticated()" class="nav-link " [routerLink]="['/create/Login']" routerLinkActive="router-link-active" >{{this.service.CurrentUser.firstName}}</a>
     </div>
-    
-  </div>
+ 
 </nav>
+
+<app-simple-model title="My Model Popup">
+  <div class="list-group">
+  <a  class="list-group-item-danger" *ngFor="let session of FoundSession" [routerLink]="['/detailsPage',session.eventId]" routerLinkActive="router-link-active" >
+  {{session?.name}}</a>
+</div>
+</app-simple-model>

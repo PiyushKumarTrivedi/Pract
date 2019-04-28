@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Isession } from '../isession';
 
 @Component({
@@ -6,11 +6,28 @@ import { Isession } from '../isession';
   templateUrl: './session-details.component.html',
   styleUrls: ['./session-details.component.css']
 })
-export class SessionDetailsComponent implements OnInit {
+export class SessionDetailsComponent implements OnChanges {
+   
 @Input() childSessions :Isession[]
+@Input() Filterby:string="all"
+@Input()VisibleSession:Isession[];
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnChanges() {
+    if(this.childSessions!= null)
+ this.FiltersessionByClick(this.Filterby);
 
+ }
+
+  private FiltersessionByClick(filter) {
+    if (filter == "all") {
+      this.VisibleSession = this.childSessions.slice(0);
+    }
+    else {
+      this.VisibleSession= this.childSessions.filter(session => {
+        return session.level === filter;
+      });
+      console.log(this.VisibleSession);
+    }
+  }
 }

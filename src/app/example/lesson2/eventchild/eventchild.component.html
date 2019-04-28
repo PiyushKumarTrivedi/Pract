@@ -3,15 +3,15 @@
 
   <div class="row">
     <div class="col-md-8">
-      <h3>{{inputchild1.name}} </h3>
+      <h3>{{inputchild1.name|uppercase}} </h3>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6 ">
-      <div><strong>Date:</strong> {{inputchild1?.date}}</div>
+      <div><strong>Date:</strong> {{inputchild1?.date|date:'y/M/d'}}</div>
       <div><strong>Time:</strong> {{inputchild1?.time}}</div>
-      <div><strong>Price:</strong> ${{inputchild1?.price}}</div>
+      <div><strong>Price:</strong> {{inputchild1?.price|currency:'USD'}}</div>
     </div>
     <div class="col-md-6">
       <address>
@@ -25,16 +25,31 @@
 
 <hr>
 <div class="container-fluid">
-<div class="row pull-right">
-  <div class="col-2">
-    <h3>Session</h3>
-  </div>
-  <div class="col-2">
-      <input type="button" class="btn btn-primary pull-right" value="Add NewSession" (click)="addSession()">
+<div class="row">
+   
+ 
+    <div class="col-2">
+        <h3>Session</h3>
     </div>
-  
-</div>
-<app-session-details [childSessions]="inputchild1?.sessions" *ngIf="!addNewSession"  ></app-session-details>
+    <div class="col-7">
+    <input type="button" (click)= "filterby='all'" style="margin: 2px"  class="btn btn-primary" [class.active]="filterby=='all'" value="all" >
+ 
+        <input type="button" (click)= "filterby='Intermediate'"   style="margin: 2px" 
+         class="btn btn-primary" [class.active]="filterby=='Intermediate'" value="Intermediate" >
+      
+          <input type="button" (click)= "filterby='Advance'"   style="margin: 2px" 
+           class="btn btn-primary" [class.active]="filterby=='Advance'" value="Advance" >
+       
+            <input type="button" (click)= "filterby='Beginner'"   style="margin: 2px" 
+             class="btn btn-primary" [class.active]="filterby=='Beginner'" value="Beginner" >
+          </div>
+    <div class="col-2 pull-right ">
+        <input type="button" class="btn btn-primary pull-right" value="Add NewSession" (click)="addSession()">
+    </div>
+     
+    </div>
+ 
+<app-session-details [Filterby]="filterby" [childSessions]="inputchild1?.sessions" *ngIf="!addNewSession"  ></app-session-details>
 <app-create-session  *ngIf="addNewSession" (SaveSessionTonextParent) = "saveCrSessiontoChildSession($event)"></app-create-session>
 <hr>
 </div>
