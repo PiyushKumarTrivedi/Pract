@@ -2,7 +2,12 @@
 
 
 <div class="row  border" *ngFor="let item of VisibleSession">
-  <div class="col-md-12">
+  <div class="col-md-2">
+    <app-upvote (vote)="toggleVote(item,$event)"[count]="item.voters.length" [voted]="userHasVoted(item)">
+
+    </app-upvote>
+  </div>
+  <div class="col-md-10">
    <app-content-proj> 
      <div well-title>     
       <h4>{{item?.name|uppercase}}

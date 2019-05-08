@@ -39,7 +39,7 @@
     <form class="navbar-form form-inline pull-left col-4" id="searchform" (ngSubmit)="SearchSession(SearchTerm)">
         <div class="form-group">
             <input type="text" [(ngModel)]="SearchTerm" name="SearchTerm" class="form-control mr-2" placeholder="serach..">
-            <button class="btn btn-outline-danger" appModelTrigegr >Serach</button>
+            <button class="btn btn-outline-danger" appModelTrigegr ="modelIdFromNavBar" >Serach</button>
             </div>            
     </form>
            
@@ -52,7 +52,7 @@
  
 </nav>
 
-<app-simple-model title="My Model Popup">
+<app-simple-model title="My Model Popup" elementId="modelIdFromNavBar">
   <div class="list-group">
   <a  class="list-group-item-danger" *ngFor="let session of FoundSession" [routerLink]="['/detailsPage',session.eventId]" routerLinkActive="router-link-active" >
   {{session?.name}}</a>

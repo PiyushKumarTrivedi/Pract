@@ -30,6 +30,10 @@ import { ToastrService } from './example/Common/toastr.service';
 import { JQ_Token } from './example/Common/Service/jq.service';
 import { SimpleModelComponent } from './example/lesson2/Model/simple-model/simple-model.component';
 import { ModelTrigegrDirective } from './example/Common/ExtendedHTML/model-trigegr.directive';
+import { UpvoteComponent } from './example/lesson2/Component/upvote/upvote.component';
+import { VoterService } from './example/lesson2/services/voter.service';
+import { LocationAndAddressValidatorsDirective } from './example/Common/BusinessValidators/location-and-address-validators.directive';
+ 
  
  
 let Jquery=window['$'];
@@ -54,6 +58,8 @@ let Jquery=window['$'];
     DurationPipeComponent,
     SimpleModelComponent,
     ModelTrigegrDirective,
+    UpvoteComponent,
+    LocationAndAddressValidatorsDirective,
     
     
   
@@ -73,7 +79,7 @@ let Jquery=window['$'];
       provide:JQ_Token,useValue:Jquery
     },
     ResolverService,
-    AuthService,ToastrService
+    AuthService,ToastrService,VoterService
   ],
   bootstrap: [AppComponent]
 })
